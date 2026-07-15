@@ -1,1 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Elite Tour Season 6 Application | Ivy Network PLC</title>
+
+<link rel="icon" href="https://ivynetwork.co.uk/logo.png">
+
+<style>
+
+:root {
+    --primary: #0099cc;
+    --dark-bg: #07141f;
+    --card-bg: #ffffff;
+    --text: #222;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--dark-bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 160px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary);
+}
+
+.subtitle {
+    text-align:center;
+    margin-bottom:30px;
+    color:#555;
+}
+
+.section {
+    margin-top:30px;
+}
+
+.section h2 {
+    font-size:20px;
+    border-bottom:2px solid var(--primary);
+    padding-bottom:8px;
+}
+
+label {
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea {
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:15px;
+}
+
+textarea {
+    min-height:120px;
+}
+
+.checkbox-group {
+    margin-top:15px;
+}
+
+.checkbox-item {
+    margin:10px 0;
+}
+
+button {
+    width:100%;
+    padding:15px;
+    margin-top:30px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover {
+    opacity:.9;
+}
+
+.notice {
+    background:#e8f8ff;
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.success {
+    display:none;
+    background:#d4edda;
+    color:#155724;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.error {
+    display:none;
+    background:#f8d7da;
+    color:#721c24;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+
+/* DARK MODE SUPPORT */
+
+@media (prefers-color-scheme: dark){
+
+body {
+    background:#020b12;
+}
+
+.card {
+    background:#0d1b26;
+    color:white;
+}
+
+input,
+select,
+textarea {
+    background:#122533;
+    color:white;
+    border-color:#345;
+}
+
+.subtitle {
+    color:#ccc;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+<img src="https://ivynetwork.co.uk/logo.png" alt="Ivy Network">
+</div>
+
+<div class="card">
+
+<h1>
+Elite Tour Season 6 Application Form
+</h1>
+
+<p class="subtitle">
+Apply to participate in Ivy Network PLC Elite Tour Season 6.
+Please provide accurate information.
+</p>
+<form id="applicationForm">
+
+<!-- PERSONAL INFORMATION -->
+<div class="section">
+
+<h2>Personal Information</h2>
+
+<label>Full Name *</label>
+<input type="text" id="full_name" required>
+
+<label>Gender *</label>
+<select id="gender" required>
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<label>Date of Birth *</label>
+<input type="date" id="date_of_birth" required>
+
+<label>Phone Number *</label>
+<input type="tel" id="phone_number" required>
+
+<label>WhatsApp Number</label>
+<input type="tel" id="whatsapp_number">
+
+<label>Email Address</label>
+<input type="email" id="email">
+
+</div>
+
+
+<!-- LOCATION -->
+
+<div class="section">
+
+<h2>Location Information</h2>
+
+<label>Country</label>
+<input type="text" id="country" value="Tanzania">
+
+<label>Region *</label>
+<input type="text" id="region" required>
+
+<label>District</label>
+<input type="text" id="district">
+
+<label>Ward</label>
+<input type="text" id="ward">
+
+</div>
+
+
+<!-- TOUR REGION -->
+
+<div class="section">
+
+<h2>Elite Tour Season 6 Selection</h2>
+
+<label>
+Choose Your Preferred Tour Region *
+</label>
+
+<select id="preferred_region" required>
+
+<option value="">
+Select Region
+</option>
+
+<option>Mwanza</option>
+<option>Morogoro</option>
+<option>Lindi</option>
+<option>Singida</option>
+<option>Kagera</option>
+<option>Tabora</option>
+
+</select>
+
+</div>
+
+
+
+<!-- DOCUMENTS -->
+
+<div class="section">
+
+<h2>Required Documents</h2>
+
+<div class="notice">
+
+Please select exactly <strong>two (2)</strong> documents from the list below.
+
+</div>
+
+
+<div class="checkbox-group">
+
+<div class="checkbox-item">
+<input type="checkbox"
+class="documentChoice"
+value="Education Certificate or Selfie Video">
+Education Certificate or Selfie Video
+</div>
+
+
+<div class="checkbox-item">
+<input type="checkbox"
+class="documentChoice"
+value="Health Certificate">
+Health Certificate
+</div>
+
+
+<div class="checkbox-item">
+<input type="checkbox"
+class="documentChoice"
+value="Local Government Chairman Letter">
+Local Government Chairman Letter
+</div>
+
+
+<div class="checkbox-item">
+<input type="checkbox"
+class="documentChoice"
+value="Passport, NIDA or Voter ID Card">
+Passport, NIDA or Voter ID Card
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- UPLOADS -->
+
+<div class="section">
+
+<h2>Upload Documents</h2>
+
+
+<label>
+Document 1 File *
+</label>
+
+<input 
+type="file"
+id="document_1"
+accept=".jpg,.jpeg,.png,.pdf,.mp4"
+required>
+
+
+<label>
+Document 2 File *
+</label>
+
+<input 
+type="file"
+id="document_2"
+accept=".jpg,.jpeg,.png,.pdf,.mp4"
+required>
+
+
+</div>
+
+
+
+<!-- EMERGENCY -->
+
+<div class="section">
+
+<h2>Emergency Contact</h2>
+
+
+<label>Full Name</label>
+<input type="text" id="emergency_name">
+
+
+<label>Phone Number</label>
+<input type="tel" id="emergency_phone">
+
+
+<label>Relationship</label>
+<input type="text" id="emergency_relationship">
+
+
+</div>
+
+
+
+<!-- QUESTIONS -->
+
+<div class="section">
+
+<h2>Application Questions</h2>
+
+
+<label>
+Why do you want to join Elite Tour?
+</label>
+
+<textarea id="reason_for_joining"></textarea>
+
+
+<label>
+What are your expectations from Elite Tour?
+</label>
+
+<textarea id="expectations"></textarea>
+
+
+</div>
+
+
+
+<div class="section">
+
+<label>
+<input type="checkbox" id="accepted_terms" required>
+
+I confirm that the information provided is correct.
+</label>
+
+
+</div>
+
+
+
+<button type="submit">
+Submit Application
+</button>
+
+
+<div class="success" id="successMessage">
+
+Your application has been submitted successfully.
+Our team will review your application and contact you.
+
+</div>
+
+
+<div class="error" id="errorMessage">
+
+Something went wrong. Please try again.
+
+</div>
+
+
+</form>
+<!-- SUPABASE SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL = "https://nsdvxdfrvngirnxeotlv.supabase.co";
+
+const SUPABASE_ANON_KEY = "WEKA_ANON_KEY_YAKO_HAPA";
+
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
+
+
+
+const form = document.getElementById("applicationForm");
+
+const successMessage = document.getElementById("successMessage");
+const errorMessage = document.getElementById("errorMessage");
+
+
+
+// LIMIT DOCUMENT SELECTION TO 2
+
+const documentChoices = document.querySelectorAll(".documentChoice");
+
+
+documentChoices.forEach(item => {
+
+    item.addEventListener("change", () => {
+
+        const selected = document.querySelectorAll(".documentChoice:checked");
+
+        if(selected.length > 2){
+
+            item.checked = false;
+
+            alert("Please select exactly two documents only.");
+
+        }
+
+    });
+
+});
+
+
+
+
+
+// UPLOAD FILE FUNCTION
+
+async function uploadFile(file){
+
+    const fileName = 
+    Date.now() + "-" + file.name.replace(/\s+/g, "-");
+
+
+    const filePath = fileName;
+
+
+    const {data, error} = await supabaseClient
+    .storage
+    .from("elite-tour-documents")
+    .upload(filePath, file);
+
+
+    if(error){
+
+        throw error;
+
+    }
+
+
+    return filePath;
+
+}
+
+
+
+
+
+
+
+// SUBMIT FORM
+
+form.addEventListener(
+"submit",
+async function(e){
+
+
+e.preventDefault();
+
+
+
+try {
+
+
+const selectedDocuments = 
+Array.from(
+document.querySelectorAll(".documentChoice:checked")
+)
+.map(item => item.value);
+
+
+
+if(selectedDocuments.length !== 2){
+
+alert(
+"Please select exactly two required documents."
+);
+
+return;
+
+}
+
+
+
+
+const file1 =
+document.getElementById("document_1").files[0];
+
+
+const file2 =
+document.getElementById("document_2").files[0];
+
+
+
+if(!file1 || !file2){
+
+alert(
+"Please upload both documents."
+);
+
+return;
+
+}
+
+
+
+
+// Upload files
+
+const document1Path =
+await uploadFile(file1);
+
+
+const document2Path =
+await uploadFile(file2);
+
+
+
+
+
+// Insert application
+
+const {data, error} =
+await supabaseClient
+.from("applications")
+.insert([{
+
+
+full_name:
+document.getElementById("full_name").value,
+
+
+gender:
+document.getElementById("gender").value,
+
+
+date_of_birth:
+document.getElementById("date_of_birth").value,
+
+
+phone_number:
+document.getElementById("phone_number").value,
+
+
+whatsapp_number:
+document.getElementById("whatsapp_number").value,
+
+
+email:
+document.getElementById("email").value,
+
+
+country:
+document.getElementById("country").value,
+
+
+region:
+document.getElementById("region").value,
+
+
+district:
+document.getElementById("district").value,
+
+
+ward:
+document.getElementById("ward").value,
+
+
+preferred_region:
+document.getElementById("preferred_region").value,
+
+
+selected_documents:
+selectedDocuments,
+
+
+document_1_url:
+document1Path,
+
+
+document_2_url:
+document2Path,
+
+
+emergency_name:
+document.getElementById("emergency_name").value,
+
+
+emergency_phone:
+document.getElementById("emergency_phone").value,
+
+
+emergency_relationship:
+document.getElementById("emergency_relationship").value,
+
+
+reason_for_joining:
+document.getElementById("reason_for_joining").value,
+
+
+expectations:
+document.getElementById("expectations").value,
+
+
+accepted_terms:
+true
+
+
+}]);
+
+
+
+
+if(error){
+
+throw error;
+
+}
+
+
+
+
+
+successMessage.style.display="block";
+
+errorMessage.style.display="none";
+
+
+form.reset();
+
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+
+
+}
+
+catch(error){
+
+
+console.error(error);
+
+
+errorMessage.style.display="block";
+
+
+successMessage.style.display="none";
+
+
+}
+
+
+
+});
+
+
+</script>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>
