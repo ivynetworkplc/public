@@ -1,0 +1,18 @@
+{
+  "name": "ivy-network-forms-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ivy Network PLC forms API — Cloudflare Workers + D1",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create ivy-forms-db",
+    "db:migrate:local": "wrangler d1 migrations apply ivy-forms-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply ivy-forms-db --remote",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.20.0"
+  }
+}
